@@ -21,7 +21,7 @@ The website is designed to showcase my professional profile, technical skills, a
 - Google Fonts
 
 ## Live Demo
-https://reshmakalidass.github.io
+file:///K:/Portfolio/index.html#home
 
 ## Author
 **Reshma Kalidass**
