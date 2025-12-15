@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #0f172a;
+      color: #e5e7eb;
+    }
+
+    /* NAVBAR */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 15px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+    }
+
+    nav h1 {
+      font-size: 22px;
+      color: #38bdf8;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #e5e7eb;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #38bdf8;
+    }
+
+    /* HERO */
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 20px;
+      background: linear-gradient(120deg, #020617, #0f172a);
+    }
+
+    .hero h2 {
+      font-size: 48px;
+      margin-bottom: 15px;
+    }
+
+    .hero span {
+      color: #38bdf8;
+    }
+
+    .hero p {
+      max-width: 600px;
+      margin: auto;
+      opacity: 0.85;
+    }
+
+    .hero button {
+      margin-top: 25px;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 30px;
+      background: #38bdf8;
+      color: #020617;
+      font-size: 16px;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .hero button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(56, 189, 248, 0.4);
+    }
+
+    /* SECTION */
+    section {
+      padding: 100px 80px;
+    }
+
+    section h2 {
+      font-size: 36px;
+      margin-bottom: 40px;
+      text-align: center;
+      color: #38bdf8;
+    }
+
+    /* ABOUT */
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about img {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+
+    /* SKILLS */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 25px;
+    }
+
+    .skill-card {
+      background: #020617;
+      padding: 25px;
+      border-radius: 15px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-8px);
+    }
+
+    /* PROJECTS */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .project {
+      background: #020617;
+      border-radius: 15px;
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+
+    .project:hover {
+      transform: scale(1.03);
+    }
+
+    .project img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .project div {
+      padding: 20px;
+    }
+
+    /* CONTACT */
+    form {
+      max-width: 500px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    form input, form textarea {
+      padding: 12px;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+    }
+
+    form button {
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background: #38bdf8;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #020617;
+      opacity: 0.7;
+    }
+
+    @media(max-width: 900px) {
+      .about {
+        grid-template-columns: 1fr;
+      }
+      section {
+        padding: 80px 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <h1>MyPortfolio</h1>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero" id="home">
+    <div data-aos="fade-up">
+      <h2>Hi, I'm <span>Reshma Kalidass</span></h2>
+      <p>Java Full Stack Developer | Computer Science Engineering Student</p>
+      <button onclick="document.getElementById('projects').scrollIntoView()">View My Work</button>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2 data-aos="fade-right">About Me</h2>
+    <div class="about">
+      <p data-aos="fade-up">I am a passionate Java Full Stack Developer driven by curiosity, creativity, and continuous learning. I enjoy building meaningful digital solutions with clean, efficient, and user-focused design. With skills in both front-end and back-end development, I strive to create responsive and visually appealing applications while continuously improving my technical expertise.</p>
+      <img src="images/profile.jpg" alt="Reshma Kalidass" data-aos="zoom-in">
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <h2 data-aos="fade-right">Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-card" data-aos="flip-left">Java</div>
+      <div class="skill-card" data-aos="flip-left">Java Full Stack</div>
+      <div class="skill-card" data-aos="flip-left">HTML, CSS, JavaScript</div>
+      <div class="skill-card" data-aos="flip-left">Python</div>
+      <div class="skill-card" data-aos="flip-left">AWS & Azure</div>
+      <div class="skill-card" data-aos="flip-left">C Programming</div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h2 data-aos="fade-right">Projects</h2>
+    <div class="projects-grid">
+      <div class="project" data-aos="zoom-in">
+        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085">
+        <div>
+          <h3>Personal Portfolio</h3>
+          <p>Built a modern, responsive portfolio website using HTML, CSS, and JavaScript to highlight professional profile, technical skills, and projects. Integrated CSS animations, smooth scrolling, and interactive components to enhance user experience. Optimized layout for mobile and desktop devices using responsive design principles and deployed using GitHub Pages..</p>
+        </div>
+      </div>
+      <div class="project" data-aos="zoom-in">
+        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c">
+        <div>
+          <h3>Sales Prediction Using EDA</h3>
+          <p>Built a data analysis project to predict sales trends by applying Exploratory Data Analysis (EDA) techniques. Conducted data cleaning, handling missing values, and feature analysis using Python, Pandas, NumPy, and Matplotlib. Visualized sales patterns and correlations to enhance forecasting accuracy and derive meaningful business insights. Collaborated in a team of 5 to interpret results effectively..</p>
+          </div>
+          </div>
+          <div class="project" data-aos="zoom-in">
+        <img src="programming-web-banner-best-languages-260nw-2392481249.webp">
+        <div>
+          <h3>Students Attendance Maintainace</h3>
+          <p>Built an automated attendance management solution using Zoho Cliqtrix to track and maintain student attendance digitally. Implemented custom actions, workflows, and bot interactions to mark, store, and retrieve attendance data. Enhanced operational efficiency by minimizing manual errors and providing structured attendance reports. Developed as part of the Zoho Cliqtrix Contest.</p>
+        </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2 data-aos="fade-right">Contact Me</h2>
+    <form data-aos="fade-up">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="4" placeholder="Your Message"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    © 2025 Your Name. All Rights Reserved.
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+  </script>
+   <!-- Footer -->
+<footer>
+<p>© 2025 Reshma | Built with ❤️</p>
+<div>
+<a href="https://github.com/reshmakalidass" target="_blank">GitHub</a>
+<a href="https://linkedin.com" target="_blank">LinkedIn</a>
+</div>
+</footer>
+</body>
+</html>
